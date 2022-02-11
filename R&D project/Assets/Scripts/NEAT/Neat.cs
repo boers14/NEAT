@@ -215,7 +215,7 @@ public class Neat
             selector.Add(s, s.GetScore());
         }
 
-        foreach(Client c in clients.GetData())
+        foreach (Client c in clients.GetData())
         {
             if (c.GetSpecies() == null)
             {

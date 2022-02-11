@@ -30,7 +30,18 @@ public class Manager : MonoBehaviour
         StartNextGeneration();
     }
 
-    public void CallNextGeneration()
+    public void StartCheckForNextGeneration()
+    {
+        StartCoroutine(CheckForNextGeneration());
+    }
+
+    private IEnumerator CheckForNextGeneration()
+    {
+        yield return new WaitForEndOfFrame();
+        CallNextGeneration();
+    }
+
+    private void CallNextGeneration()
     {
         amountOfCarsDisabled = 0;
         for (int i = 0; i < carList.Count; i++)
@@ -47,7 +58,6 @@ public class Manager : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
@@ -106,7 +116,6 @@ public class Manager : MonoBehaviour
         }
 
         carList = new List<Driving>();
-
         for (int i = 0; i < populationSize; i++)
         {
             Driving car = Instantiate(carPrefab, startPoint.transform.position, carPrefab.transform.rotation).GetComponent<Driving>();

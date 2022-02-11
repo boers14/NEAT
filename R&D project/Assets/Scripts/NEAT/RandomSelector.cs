@@ -24,7 +24,7 @@ public class RandomSelector<T>
         for (int i = 0; i < objects.Count; i++)
         {
             c += scores[i];
-            if (c > v)
+            if (c >= v)
             {
                 return objects[i];
             }

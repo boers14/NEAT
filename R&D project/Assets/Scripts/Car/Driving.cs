@@ -99,7 +99,7 @@ public class Driving : MonoBehaviour
         double[] outputs = client.Calculate(DecideOutput());
 
         for (int i = 0; i < amountOfInputs; i++)
-            {
+        {
             int input = directionFromOutput(outputs);
             outputs[input] = -100;
 
@@ -320,7 +320,7 @@ public class Driving : MonoBehaviour
         if (!canDriveManually)
         {
             gameObject.SetActive(false);
-            manager.CallNextGeneration();
+            manager.StartCheckForNextGeneration();
         }
         else
         {
