@@ -1,2 +1,1 @@
-NEAT
 A neural network that changes the topology of itsself over time to optimize the ai for the task that it needs to learn. The ai does this on with an evolutionary ai concept, where it chooses the best performing neural networks within a group and combines them with other ai and then mutates the ai to create a new test group of ai's to run in the program. It keeps repeating this process to create the best ai possible.
